@@ -21,7 +21,7 @@ class RootViewController: UINavigationController {
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.backgroundColor = UIColor.dynamicColor(light: .nordicBlue, dark: .black)
+            navBarAppearance.backgroundColor = UIColor.dynamicColor(light: .gregoryBlue, dark: .black)
             navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             navigationBar.standardAppearance = navBarAppearance

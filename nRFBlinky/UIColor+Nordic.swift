@@ -15,7 +15,7 @@ extension UIColor {
             return UIColor { (traitCollection) -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? light : dark
             }
-        } else {
+        } else { 
             return light
         }
     }
@@ -23,5 +23,8 @@ extension UIColor {
     static let nordicBlue = #colorLiteral(red: 0, green: 0.7181802392, blue: 0.8448022008, alpha: 1)
     
     static let nordicRed = #colorLiteral(red: 0.9567440152, green: 0.2853084803, blue: 0.3770255744, alpha: 1)
+    
+    static let gregoryBlue = #colorLiteral(red: 0, green: 0.2901960784, blue: 0.5019607843, alpha: 1)
+    
     
 }

@@ -16,6 +16,7 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
     @IBOutlet weak var ledStateLabel: UILabel!
     @IBOutlet weak var ledToggleSwitch: UISwitch!
     @IBOutlet weak var buttonStateLabel: UILabel!
+    @IBOutlet weak var textLastPostureTime: UILabel!
     
     @IBAction func ledToggleSwitchDidChange(_ sender: Any) {
         handleSwitchValueChange(newValue: ledToggleSwitch.isOn)
@@ -123,10 +124,25 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
         DispatchQueue.main.async {
             if isPressed {
                 self.buttonStateLabel.text = "PRESSED".localized
+                //self.butt
             } else {
-                self.buttonStateLabel.text = "RELEASED".localized
+                self.buttonStateLabel.text = "VACANT".localized
             }
             self.buttonTapHapticFeedback()
         }
     }
+    
+    func getLastPostureTime(pressed : NSInteger , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) {
+        DispatchQueue.main.async {
+            if last_posture_sec < 60 {
+                self.textLastPostureTime.text = "\(last_posture_hour):\(last_posture_min):\(last_posture_sec)".localized
+                //self.butt
+            } else {
+                self.textLastPostureTime.text = "READY".localized
+            }
+
+        }
+    }
+    
+    
 }

@@ -15,6 +15,7 @@ protocol BlinkyDelegate {
     func blinkyDidDisconnect()
     func buttonStateChanged(isPressed: Bool)
     func ledStateChanged(isOn: Bool)
+    func getLastPostureTime(pressed : NSInteger , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) 
 }
 
 class BlinkyPeripheral: NSObject, CBPeripheralDelegate, CBCentralManagerDelegate {
@@ -176,8 +177,15 @@ class BlinkyPeripheral: NSObject, CBPeripheralDelegate, CBCentralManagerDelegate
     
     /// A callback called when the Button characteristic value has changed.
     private func didReceiveButtonNotification(withValue value: Data) {
-        print("Button value changed to: \(value[0])")
+        print("Button value changed to: \(value[0]) \(value[1]) \(value[2]) \(value[3]) \(value[4])")
         delegate?.buttonStateChanged(isPressed: value[0] == 0x1)
+        
+        //self.buttonStateLabel.text = "VACANT".localized
+        if value[0]==0 || value[0]==1 || value[0]==3 {
+                    delegate?.getLastPostureTime( pressed : NSInteger(value[0]) , last_posture_sec : NSInteger(value[1]) , last_posture_min: NSInteger(value[2]) , last_posture_hour: NSInteger( value[3]) , long_seat_alert : NSInteger(value[4]) , state_chair : NSInteger(value[5]) )
+        }
+
+        
     }
 
     private func parseAdvertisementData(_ advertisementDictionary: [String : Any]) -> String? {

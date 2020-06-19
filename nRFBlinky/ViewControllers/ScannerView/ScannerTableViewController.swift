@@ -31,7 +31,7 @@ class ScannerTableViewController: UITableViewController, CBCentralManagerDelegat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barTintColor = UIColor.nordicBlue
+        navigationController?.navigationBar.barTintColor = UIColor.gregoryBlue
         centralManager.delegate = self
         if centralManager.state == .poweredOn {
             activityIndicator.startAnimating()
