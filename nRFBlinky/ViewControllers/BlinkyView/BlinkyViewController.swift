@@ -17,6 +17,12 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
     @IBOutlet weak var ledToggleSwitch: UISwitch!
     @IBOutlet weak var buttonStateLabel: UILabel!
     @IBOutlet weak var textLastPostureTime: UILabel!
+    @IBOutlet weak var textWarning: UILabel! 
+    @IBOutlet weak var textSensorState: UILabel!
+    @IBOutlet weak var percentProgressBar: UIProgressView!
+    @IBOutlet weak var imageSitting: UIImageView!
+    @IBOutlet weak var imageVacant: UIImageView!
+    @IBOutlet weak var imageImproper: UIImageView!
     
     @IBAction func ledToggleSwitchDidChange(_ sender: Any) {
         handleSwitchValueChange(newValue: ledToggleSwitch.isOn)
@@ -46,6 +52,10 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
         }
         prepareHaptics()
         blinkyPeripheral.connect()
+        self.imageImproper.alpha = 0
+        self.imageSitting.alpha = 0
+        self.imageVacant.alpha = 1
+        self.percentProgressBar.alpha = 0
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -122,26 +132,202 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
     
     func buttonStateChanged(isPressed: Bool) {
         DispatchQueue.main.async {
-            if isPressed {
+        /*    if isPressed {
                 self.buttonStateLabel.text = "PRESSED".localized
                 //self.butt
             } else {
                 self.buttonStateLabel.text = "VACANT".localized
             }
-            self.buttonTapHapticFeedback()
+            self.buttonTapHapticFeedback()*/
         }
     }
+     static var data_rec_chair_state : Int8 = 0
+     static var data_rec_alarmed : Bool = false
+     static var data_rec_pressed : Bool = false
+     static var setImageResourceImproper : Bool = false
+     
+    static var savedSeatHour : Int32 = 0
+    static var savedSeatMin : Int32 = 2
+    static var savedBreakHour : Int32 = 0
+    static var savedBreakMin : Int32 = 1
     
-    func getLastPostureTime(pressed : NSInteger , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) {
+    
+    
+     
+     
+     let STATE_SEATED_IMPROPER = 0x03
+     let STATE_SEATED = 0x01
+     let STATE_NOT_SEATED = 0x00
+    
+     
+     let CHAIR_IDLE = 0
+     let CHAIR_SEATED = 1
+     let CHAIR_BREAK = 2
+     
+    
+    func getLastPostureTime(pressed : Int8 , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) {
         DispatchQueue.main.async {
             if last_posture_sec < 60 {
                 self.textLastPostureTime.text = "\(last_posture_hour):\(last_posture_min):\(last_posture_sec)".localized
                 //self.butt
             } else {
-                self.textLastPostureTime.text = "READY".localized
+                self.textLastPostureTime.text = "\(last_posture_hour):\(last_posture_min)".localized
             }
+            
+            
+            
+            //getAlarmPercentage() in android
+             var alarmPercentage:Int32
+             var alarmMinTotal:Int32
+             alarmPercentage = Int32(last_posture_hour) * 3600
+             alarmPercentage += Int32(last_posture_min) * 60
+            if(last_posture_sec<60) {
+                alarmPercentage += Int32(last_posture_sec)        //alarmPercentage is in second
+            }
+             alarmPercentage *= 10
+             alarmPercentage /= 6       //alarmMinTotal is in min. so we must /60 for min and * 100 for percent. (= *10 /6)
+
+            if pressed != self.STATE_NOT_SEATED {            //if seated, use SeatAlarm as reference
+                 alarmMinTotal = BlinkyViewController.savedSeatHour * 60;
+                 alarmMinTotal += BlinkyViewController.savedSeatMin;
+             }
+             else{
+                 alarmMinTotal = BlinkyViewController.savedBreakHour * 60;    //if not seated, use Break Time as reference
+                 alarmMinTotal += BlinkyViewController.savedBreakMin;
+             }
+            if(alarmMinTotal>0) {
+                alarmPercentage /= alarmMinTotal
+            }
+             //alarmPercentage++;
+            if(alarmPercentage>100){
+                alarmPercentage=100
+            }
+            
+            self.percentProgressBar.progress = Float(alarmPercentage) / 100
+            
+            if pressed == self.STATE_NOT_SEATED{ //!BlinkyViewController.data_rec_pressed {
+                if alarmPercentage>99 {
+                    self.percentProgressBar.alpha = 0
+                }
+            }
+            else {
+                    if BlinkyViewController.data_rec_alarmed{
+                        self.percentProgressBar.progress = 1
+                    }
+            }
+           /// end of getAlarmPercentage
+            
+            
 
         }
+    }
+    
+
+    func getChairState(chairState:Int8){
+        if chairState == CHAIR_SEATED{
+            self.buttonStateLabel.text = "Sitting"
+        }
+            else if chairState == CHAIR_IDLE{
+                self.buttonStateLabel.text = "Idle"
+        }
+        else{
+              self.buttonStateLabel.text = "Break"
+        }
+    }
+    
+    func getButtonState(pressed: Int8){
+        if pressed == STATE_SEATED_IMPROPER{
+            BlinkyViewController.setImageResourceImproper = true
+             self.textSensorState.text = "*"
+            BlinkyViewController.data_rec_chair_state = pressed
+        }
+        else if pressed == STATE_SEATED {
+            BlinkyViewController.setImageResourceImproper = false
+            self.textSensorState.text = "**"
+            BlinkyViewController.data_rec_chair_state = pressed
+        }
+        else {
+            self.textSensorState.text = ""
+        }
+        
+        if pressed != STATE_NOT_SEATED {
+            if !BlinkyViewController.data_rec_pressed {
+                self.imageVacant.alpha = 0
+                if BlinkyViewController.setImageResourceImproper {
+                     self.imageSitting.alpha = 0
+                    self.imageImproper.alpha = 1
+                }
+                else {
+                    self.imageSitting.alpha = 1
+                    self.imageImproper.alpha = 0
+                }
+            }
+
+            
+            self.percentProgressBar.alpha = 1
+            BlinkyViewController.data_rec_pressed = true
+        }
+        else {
+                if BlinkyViewController.data_rec_pressed {
+                    self.imageVacant.alpha = 1
+                    self.imageSitting.alpha = 0
+                    self.imageImproper.alpha = 0
+                }
+            
+                if !BlinkyViewController.data_rec_alarmed {
+                     self.percentProgressBar.alpha = 0
+                }
+                BlinkyViewController.data_rec_pressed = false
+            
+        }
+        
+    }
+    
+    func getSeatAlarm ( seatAlarm : Bool) {
+        DispatchQueue.main.async {
+            
+
+            
+            if seatAlarm {
+                if !BlinkyViewController.data_rec_pressed{
+                    BlinkyViewController.data_rec_alarmed = false
+                    self.textLastPostureTime.text = "Ready"
+                    self.textWarning.text = "Please sit down on your Smart Chair"
+                    self.textWarning.textColor = UIColor.colorBorder
+                    self.textLastPostureTime.textColor = UIColor.colorBorder
+                }
+               else {
+                    self.textLastPostureTime.textColor = UIColor.colorTimeNormal
+                    if BlinkyViewController.data_rec_chair_state != 3 {
+                        self.textWarning.text = "Just Relax! We are measuring your sit time"
+                        self.textWarning.textColor = UIColor.colorTimeNormal
+                    }
+                    else{
+                        self.textWarning.text = "Improper Sitting Posture"
+                        self.textWarning.textColor = UIColor.colorAlarm
+                    }
+                
+                }
+            
+            }
+            else {
+                 BlinkyViewController.data_rec_alarmed = true
+                 if !BlinkyViewController.data_rec_pressed{
+                    self.textLastPostureTime.textColor = UIColor.colorTimeNormal
+                    self.textWarning.text = "Continue with your brief break"
+                    self.textWarning.textColor = UIColor.colorTimeNormal
+                 }
+                else {
+                    self.textLastPostureTime.textColor = UIColor.colorAlarm
+                    self.textWarning.text = "Time to get up and stretch"
+                    self.textWarning.textColor = UIColor.colorAlarm
+                 }
+            }
+
+            
+        
+         }
+        
     }
     
     

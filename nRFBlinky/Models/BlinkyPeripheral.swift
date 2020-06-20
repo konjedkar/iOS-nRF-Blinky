@@ -15,7 +15,10 @@ protocol BlinkyDelegate {
     func blinkyDidDisconnect()
     func buttonStateChanged(isPressed: Bool)
     func ledStateChanged(isOn: Bool)
-    func getLastPostureTime(pressed : NSInteger , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) 
+    func getLastPostureTime(pressed : Int8 , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger)
+    func getSeatAlarm ( seatAlarm : Bool)
+    func getButtonState (pressed : Int8)
+    func getChairState(chairState:Int8)
 }
 
 class BlinkyPeripheral: NSObject, CBPeripheralDelegate, CBCentralManagerDelegate {
@@ -182,8 +185,19 @@ class BlinkyPeripheral: NSObject, CBPeripheralDelegate, CBCentralManagerDelegate
         
         //self.buttonStateLabel.text = "VACANT".localized
         if value[0]==0 || value[0]==1 || value[0]==3 {
-                    delegate?.getLastPostureTime( pressed : NSInteger(value[0]) , last_posture_sec : NSInteger(value[1]) , last_posture_min: NSInteger(value[2]) , last_posture_hour: NSInteger( value[3]) , long_seat_alert : NSInteger(value[4]) , state_chair : NSInteger(value[5]) )
+                    delegate?.getLastPostureTime( pressed : Int8(value[0]) , last_posture_sec : NSInteger(value[1]) , last_posture_min: NSInteger(value[2]) , last_posture_hour: NSInteger( value[3]) , long_seat_alert : NSInteger(value[4]) , state_chair : NSInteger(value[5]) )
+            
+
+            
+            
+            delegate?.getSeatAlarm (seatAlarm:((value[4]&0x02) == 0 ))
+            
+            delegate?.getButtonState (pressed : Int8(value[0]))
+            
+            delegate?.getChairState (chairState : Int8(value[5]))
+
         }
+        
 
         
     }

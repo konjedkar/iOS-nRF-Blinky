@@ -26,5 +26,17 @@ extension UIColor {
     
     static let gregoryBlue = #colorLiteral(red: 0, green: 0.2901960784, blue: 0.5019607843, alpha: 1)
     
+    static let colorBorder = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8470588235)
+    
+    static let colorTimeNormal = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+    
+    static let colorAlarm = #colorLiteral(red: 0.9450980392, green: 0.337254902, blue: 0.137254902, alpha: 1)
+    
+    
+    
+
+    
+    
+    
     
 }
