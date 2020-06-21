@@ -28,7 +28,7 @@ extension UIColor {
     
     static let colorBorder = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8470588235)
     
-    static let colorTimeNormal = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+    static let colorTimeNormal = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     
     static let colorAlarm = #colorLiteral(red: 0.9450980392, green: 0.337254902, blue: 0.137254902, alpha: 1)
     

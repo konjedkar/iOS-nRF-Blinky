@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreBluetooth
+import UserNotifications
+
 
 class BlinkyViewController: UITableViewController, BlinkyDelegate {
     
@@ -43,6 +45,18 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
     }
     
     // MARK: - UIViewController
+    
+   // private var content:UNMutableNotificationContent
+   // private var center:UNUserNotificationCenter
+    
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+
+           // setAlarmNotification()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -168,10 +182,10 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
     func getLastPostureTime(pressed : Int8 , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) {
         DispatchQueue.main.async {
             if last_posture_sec < 60 {
-                self.textLastPostureTime.text = "\(last_posture_hour):\(last_posture_min):\(last_posture_sec)".localized
+                self.textLastPostureTime.text = String(format: "%02d", last_posture_hour) + ":"+String(format: "%02d", last_posture_min) + ":" + String(format: "%02d", last_posture_sec) //"\(last_posture_hour):\(last_posture_min):\(last_posture_sec)".localized
                 //self.butt
             } else {
-                self.textLastPostureTime.text = "\(last_posture_hour):\(last_posture_min)".localized
+                self.textLastPostureTime.text = String(format: "%02d", last_posture_hour) + ":"+String(format: "%02d", last_posture_min)
             }
             
             
@@ -205,13 +219,13 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
             
             self.percentProgressBar.progress = Float(alarmPercentage) / 100
             
-            if pressed == self.STATE_NOT_SEATED{ //!BlinkyViewController.data_rec_pressed {
+            if pressed == self.STATE_NOT_SEATED { //!BlinkyViewController.data_rec_pressed {
                 if alarmPercentage>99 {
                     self.percentProgressBar.alpha = 0
                 }
             }
             else {
-                    if BlinkyViewController.data_rec_alarmed{
+                    if BlinkyViewController.data_rec_alarmed {
                         self.percentProgressBar.progress = 1
                     }
             }

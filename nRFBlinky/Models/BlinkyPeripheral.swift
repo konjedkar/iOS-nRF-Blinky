@@ -9,6 +9,7 @@
 
 import UIKit
 import CoreBluetooth
+import UserNotifications
 
 protocol BlinkyDelegate {
     func blinkyDidConnect(ledSupported: Bool, buttonSupported: Bool)
@@ -178,6 +179,23 @@ class BlinkyPeripheral: NSObject, CBPeripheralDelegate, CBCentralManagerDelegate
         delegate?.ledStateChanged(isOn: value[0] == 0x1)
     }
     
+    static var alarm_announce_prev:Bool = false
+    
+    func setAlarmNotification(){
+        
+        let content = UNMutableNotificationContent()
+        content.title = "NOTIF"
+        content.body = "It is time to stand and stretch those muscles."
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "ALARM_NOTIFICATION_CHANNEL", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
+    
     /// A callback called when the Button characteristic value has changed.
     private func didReceiveButtonNotification(withValue value: Data) {
         print("Button value changed to: \(value[0]) \(value[1]) \(value[2]) \(value[3]) \(value[4])")
@@ -187,8 +205,11 @@ class BlinkyPeripheral: NSObject, CBPeripheralDelegate, CBCentralManagerDelegate
         if value[0]==0 || value[0]==1 || value[0]==3 {
                     delegate?.getLastPostureTime( pressed : Int8(value[0]) , last_posture_sec : NSInteger(value[1]) , last_posture_min: NSInteger(value[2]) , last_posture_hour: NSInteger( value[3]) , long_seat_alert : NSInteger(value[4]) , state_chair : NSInteger(value[5]) )
             
-
+            if (value[4]&0x02)>0 && BlinkyPeripheral.alarm_announce_prev{
+                setAlarmNotification()
+            }
             
+            BlinkyPeripheral.alarm_announce_prev = ((value[4]&0x02) == 0 )
             
             delegate?.getSeatAlarm (seatAlarm:((value[4]&0x02) == 0 ))
             
