@@ -155,7 +155,7 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
             self.buttonTapHapticFeedback()*/
         }
     }
-     static var data_rec_chair_state : Int8 = 0
+     static var data_rec_chair_state : UInt8 = 0
      static var data_rec_alarmed : Bool = false
      static var data_rec_pressed : Bool = false
      static var setImageResourceImproper : Bool = false
@@ -179,7 +179,7 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
      let CHAIR_BREAK = 2
      
     
-    func getLastPostureTime(pressed : Int8 , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger , state_chair : NSInteger) {
+    func getLastPostureTime(pressed : Int8 , last_posture_sec: NSInteger, last_posture_min: NSInteger, last_posture_hour: NSInteger , long_seat_alert : NSInteger ) {
         DispatchQueue.main.async {
             if last_posture_sec < 60 {
                 self.textLastPostureTime.text = String(format: "%02d", last_posture_hour) + ":"+String(format: "%02d", last_posture_min) + ":" + String(format: "%02d", last_posture_sec) //"\(last_posture_hour):\(last_posture_min):\(last_posture_sec)".localized
@@ -236,8 +236,35 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
         }
     }
     
+    let REAR_SENSOR_BIT : UInt8 = 0x80
+    let FRONT_SENSOR_BIT : UInt8 = 0x40
+    
+    func getSensorsState(sensorState:UInt8){
+        var textSensor : String = ""
+        if (sensorState & REAR_SENSOR_BIT) > 0 {
+            textSensor += "R"
+        }
+        else {
+            textSensor += " "
+        }
 
-    func getChairState(chairState:Int8){
+        textSensor += "|"
+
+        if((sensorState & FRONT_SENSOR_BIT) > 0){
+            textSensor += "F"
+        }
+        else {
+            textSensor += " "
+        }
+
+        if(sensorState==0) {
+            textSensor = ""
+        }
+        self.textSensorState.text = textSensor
+    }
+    
+
+    func getChairState(chairState:UInt8){
         if chairState == CHAIR_SEATED{
             self.buttonStateLabel.text = "Sitting"
         }
@@ -249,19 +276,19 @@ class BlinkyViewController: UITableViewController, BlinkyDelegate {
         }
     }
     
-    func getButtonState(pressed: Int8){
+    func getButtonState(pressed: UInt8){
         if pressed == STATE_SEATED_IMPROPER{
             BlinkyViewController.setImageResourceImproper = true
-             self.textSensorState.text = "*"
+            // self.textSensorState.text = "*"
             BlinkyViewController.data_rec_chair_state = pressed
         }
         else if pressed == STATE_SEATED {
             BlinkyViewController.setImageResourceImproper = false
-            self.textSensorState.text = "**"
+            //self.textSensorState.text = "**"
             BlinkyViewController.data_rec_chair_state = pressed
         }
         else {
-            self.textSensorState.text = ""
+            //self.textSensorState.text = ""
         }
         
         if pressed != STATE_NOT_SEATED {

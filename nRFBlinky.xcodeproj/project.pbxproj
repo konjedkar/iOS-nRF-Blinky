@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30B664411FCD6E65003C8B55 /* nRFBlinky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nRFBlinky.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B664411FCD6E65003C8B55 /* GSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B664441FCD6E65003C8B55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B664491FCD6E65003C8B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30B6644B1FCD6E65003C8B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		30B664421FCD6E65003C8B55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30B664411FCD6E65003C8B55 /* nRFBlinky.app */,
+				30B664411FCD6E65003C8B55 /* GSmart.app */,
 				30B664551FCD6E65003C8B55 /* nRFBlinkyTests.xctest */,
 				30B664601FCD6E65003C8B55 /* nRFBlinkyUITests.xctest */,
 			);
@@ -212,9 +212,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		30B664401FCD6E65003C8B55 /* nRFBlinky */ = {
+		30B664401FCD6E65003C8B55 /* GSmart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30B664691FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "nRFBlinky" */;
+			buildConfigurationList = 30B664691FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmart" */;
 			buildPhases = (
 				30B6643D1FCD6E65003C8B55 /* Sources */,
 				30B6643E1FCD6E65003C8B55 /* Frameworks */,
@@ -224,9 +224,9 @@
 			);
 			dependencies = (
 			);
-			name = nRFBlinky;
+			name = GSmart;
 			productName = nRFBlinky;
-			productReference = 30B664411FCD6E65003C8B55 /* nRFBlinky.app */;
+			productReference = 30B664411FCD6E65003C8B55 /* GSmart.app */;
 			productType = "com.apple.product-type.application";
 		};
 		30B664541FCD6E65003C8B55 /* nRFBlinkyTests */ = {
@@ -322,7 +322,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				30B664401FCD6E65003C8B55 /* nRFBlinky */,
+				30B664401FCD6E65003C8B55 /* GSmart */,
 				30B664541FCD6E65003C8B55 /* nRFBlinkyTests */,
 				30B6645F1FCD6E65003C8B55 /* nRFBlinkyUITests */,
 			);
@@ -394,12 +394,12 @@
 /* Begin PBXTargetDependency section */
 		30B664571FCD6E65003C8B55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 30B664401FCD6E65003C8B55 /* nRFBlinky */;
+			target = 30B664401FCD6E65003C8B55 /* GSmart */;
 			targetProxy = 30B664561FCD6E65003C8B55 /* PBXContainerItemProxy */;
 		};
 		30B664621FCD6E65003C8B55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 30B664401FCD6E65003C8B55 /* nRFBlinky */;
+			target = 30B664401FCD6E65003C8B55 /* GSmart */;
 			targetProxy = 30B664611FCD6E65003C8B55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -587,9 +587,9 @@
 				INFOPLIST_FILE = nRFBlinky/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "au.inventisgregory.nrf-blinky";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,9 +607,9 @@
 				INFOPLIST_FILE = nRFBlinky/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "au.inventisgregory.nrf-blinky";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -698,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		30B664691FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "nRFBlinky" */ = {
+		30B664691FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30B6646A1FCD6E65003C8B55 /* Debug */,
