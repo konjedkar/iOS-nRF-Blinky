@@ -1,0 +1,16 @@
+PODS:
+  - CoreBluetoothMock (0.8.0)
+
+DEPENDENCIES:
+  - CoreBluetoothMock
+
+SPEC REPOS:
+  trunk:
+    - CoreBluetoothMock
+
+SPEC CHECKSUMS:
+  CoreBluetoothMock: 91ae1962b4538be4c9fcef882ebfbe8cbbb182ba
+
+PODFILE CHECKSUM: 7be07e8decf3d925cb18ab830ac22d39f2449855
+
+COCOAPODS: 1.9.3

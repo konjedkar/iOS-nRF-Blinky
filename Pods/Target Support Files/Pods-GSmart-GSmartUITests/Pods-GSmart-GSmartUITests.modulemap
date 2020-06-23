@@ -1,0 +1,6 @@
+module Pods_GSmart_GSmartUITests {
+  umbrella header "Pods-GSmart-GSmartUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

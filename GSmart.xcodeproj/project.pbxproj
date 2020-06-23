@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270300CB31F4BADECC9A91DA /* libPods-GSmartTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA23742CF4F2106DDFC966FB /* libPods-GSmartTests.a */; };
 		30B664451FCD6E65003C8B55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B664441FCD6E65003C8B55 /* AppDelegate.swift */; };
 		30B6644A1FCD6E65003C8B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B664481FCD6E65003C8B55 /* Main.storyboard */; };
 		30B6644C1FCD6E65003C8B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B6644B1FCD6E65003C8B55 /* Assets.xcassets */; };
@@ -21,6 +22,11 @@
 		52A637C0220DDECD00F5308D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52A637C2220DDECD00F5308D /* Localizable.strings */; };
 		52A637C5220DE11200F5308D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A637C4220DE11200F5308D /* String+Localization.swift */; };
 		52FB0AF022131B7D00B1E575 /* UIColor+Nordic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB0AEF22131B7D00B1E575 /* UIColor+Nordic.swift */; };
+		7036B39624A1E867008B7493 /* CoreBluetoothTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B39524A1E867008B7493 /* CoreBluetoothTypeAliases.swift */; };
+		7036B39724A1E867008B7493 /* CoreBluetoothTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B39524A1E867008B7493 /* CoreBluetoothTypeAliases.swift */; };
+		7036B39824A1E867008B7493 /* CoreBluetoothTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B39524A1E867008B7493 /* CoreBluetoothTypeAliases.swift */; };
+		9F28B7BFFD666F47A7407CDA /* libPods-GSmart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD6199090FCFFFC51D44C54 /* libPods-GSmart.a */; };
+		C5E2958224A486822409E64E /* libPods-GSmart-GSmartUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CD2CD528AB62AE84A2D93E /* libPods-GSmart-GSmartUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +53,10 @@
 		30B6644B1FCD6E65003C8B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30B6644E1FCD6E65003C8B55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30B664501FCD6E65003C8B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30B664551FCD6E65003C8B55 /* nRFBlinkyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nRFBlinkyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B664551FCD6E65003C8B55 /* GSmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GSmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B664591FCD6E65003C8B55 /* nRFBlinkyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nRFBlinkyTests.swift; sourceTree = "<group>"; };
 		30B6645B1FCD6E65003C8B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30B664601FCD6E65003C8B55 /* nRFBlinkyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nRFBlinkyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B664601FCD6E65003C8B55 /* GSmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GSmartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B664641FCD6E65003C8B55 /* nRFBlinkyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nRFBlinkyUITests.swift; sourceTree = "<group>"; };
 		30B664661FCD6E65003C8B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30B6647F1FCD9638003C8B55 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +64,7 @@
 		30B664841FCDA0FC003C8B55 /* BlinkyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkyTableViewCell.swift; sourceTree = "<group>"; };
 		30B664871FCDA2E0003C8B55 /* BlinkyPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkyPeripheral.swift; sourceTree = "<group>"; };
 		30B6648A1FD1590A003C8B55 /* BlinkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkyViewController.swift; sourceTree = "<group>"; };
+		399C373DF5A0887DE2041323 /* Pods-GSmart-GSmartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSmart-GSmartUITests.debug.xcconfig"; path = "Target Support Files/Pods-GSmart-GSmartUITests/Pods-GSmart-GSmartUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52037F882211BCE300BDEAEE /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52037F8A2211BD5B00BDEAEE /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		52A637BB220DD9AD00F5308D /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
@@ -90,8 +97,17 @@
 		52FB0AF82214632700B1E575 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		52FB0AFB221ADE7000B1E575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		52FB0AFC221ADE7000B1E575 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5650109E050E1C96B90B1918 /* Pods-GSmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSmart.release.xcconfig"; path = "Target Support Files/Pods-GSmart/Pods-GSmart.release.xcconfig"; sourceTree = "<group>"; };
+		6AD6199090FCFFFC51D44C54 /* libPods-GSmart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GSmart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7036B39524A1E867008B7493 /* CoreBluetoothTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothTypeAliases.swift; sourceTree = "<group>"; };
+		89204C2671F90E882FCCB8AA /* Pods-GSmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSmart.debug.xcconfig"; path = "Target Support Files/Pods-GSmart/Pods-GSmart.debug.xcconfig"; sourceTree = "<group>"; };
 		AA92C5CC2211A4A40011164C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		AA92C5CE2211A4A40011164C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B0CD2CD528AB62AE84A2D93E /* libPods-GSmart-GSmartUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GSmart-GSmartUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF092761F39299E0725623A0 /* Pods-GSmartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSmartTests.release.xcconfig"; path = "Target Support Files/Pods-GSmartTests/Pods-GSmartTests.release.xcconfig"; sourceTree = "<group>"; };
+		CA23742CF4F2106DDFC966FB /* libPods-GSmartTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GSmartTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF26D273C6BCC0321C92866E /* Pods-GSmartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSmartTests.debug.xcconfig"; path = "Target Support Files/Pods-GSmartTests/Pods-GSmartTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB828E244E4C1C746C193B5B /* Pods-GSmart-GSmartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSmart-GSmartUITests.release.xcconfig"; path = "Target Support Files/Pods-GSmart-GSmartUITests/Pods-GSmart-GSmartUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F28B7BFFD666F47A7407CDA /* libPods-GSmart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270300CB31F4BADECC9A91DA /* libPods-GSmartTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E2958224A486822409E64E /* libPods-GSmart-GSmartUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +145,8 @@
 				30B664581FCD6E65003C8B55 /* nRFBlinkyTests */,
 				30B664631FCD6E65003C8B55 /* nRFBlinkyUITests */,
 				30B664421FCD6E65003C8B55 /* Products */,
+				AB3414CF613B456FDF270374 /* Pods */,
+				FCB4B89B3AFE419EB6F68A3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				30B664411FCD6E65003C8B55 /* GSmart.app */,
-				30B664551FCD6E65003C8B55 /* nRFBlinkyTests.xctest */,
-				30B664601FCD6E65003C8B55 /* nRFBlinkyUITests.xctest */,
+				30B664551FCD6E65003C8B55 /* GSmartTests.xctest */,
+				30B664601FCD6E65003C8B55 /* GSmartUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +173,7 @@
 				52A637C2220DDECD00F5308D /* Localizable.strings */,
 				30B6644B1FCD6E65003C8B55 /* Assets.xcassets */,
 				30B664501FCD6E65003C8B55 /* Info.plist */,
+				7036B39524A1E867008B7493 /* CoreBluetoothTypeAliases.swift */,
 			);
 			path = nRFBlinky;
 			sourceTree = "<group>";
@@ -209,6 +231,29 @@
 			path = BlinkyView;
 			sourceTree = "<group>";
 		};
+		AB3414CF613B456FDF270374 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89204C2671F90E882FCCB8AA /* Pods-GSmart.debug.xcconfig */,
+				5650109E050E1C96B90B1918 /* Pods-GSmart.release.xcconfig */,
+				399C373DF5A0887DE2041323 /* Pods-GSmart-GSmartUITests.debug.xcconfig */,
+				FB828E244E4C1C746C193B5B /* Pods-GSmart-GSmartUITests.release.xcconfig */,
+				DF26D273C6BCC0321C92866E /* Pods-GSmartTests.debug.xcconfig */,
+				BF092761F39299E0725623A0 /* Pods-GSmartTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FCB4B89B3AFE419EB6F68A3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AD6199090FCFFFC51D44C54 /* libPods-GSmart.a */,
+				B0CD2CD528AB62AE84A2D93E /* libPods-GSmart-GSmartUITests.a */,
+				CA23742CF4F2106DDFC966FB /* libPods-GSmartTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30B664691FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmart" */;
 			buildPhases = (
+				DDBCFD282CD496AB4F13A6DF /* [CP] Check Pods Manifest.lock */,
 				30B6643D1FCD6E65003C8B55 /* Sources */,
 				30B6643E1FCD6E65003C8B55 /* Frameworks */,
 				30B6643F1FCD6E65003C8B55 /* Resources */,
@@ -229,10 +275,11 @@
 			productReference = 30B664411FCD6E65003C8B55 /* GSmart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		30B664541FCD6E65003C8B55 /* nRFBlinkyTests */ = {
+		30B664541FCD6E65003C8B55 /* GSmartTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30B6646C1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "nRFBlinkyTests" */;
+			buildConfigurationList = 30B6646C1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmartTests" */;
 			buildPhases = (
+				3B76381B1F1FF94550EB1470 /* [CP] Check Pods Manifest.lock */,
 				30B664511FCD6E65003C8B55 /* Sources */,
 				30B664521FCD6E65003C8B55 /* Frameworks */,
 				30B664531FCD6E65003C8B55 /* Resources */,
@@ -242,15 +289,16 @@
 			dependencies = (
 				30B664571FCD6E65003C8B55 /* PBXTargetDependency */,
 			);
-			name = nRFBlinkyTests;
+			name = GSmartTests;
 			productName = nRFBlinkyTests;
-			productReference = 30B664551FCD6E65003C8B55 /* nRFBlinkyTests.xctest */;
+			productReference = 30B664551FCD6E65003C8B55 /* GSmartTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		30B6645F1FCD6E65003C8B55 /* nRFBlinkyUITests */ = {
+		30B6645F1FCD6E65003C8B55 /* GSmartUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30B6646F1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "nRFBlinkyUITests" */;
+			buildConfigurationList = 30B6646F1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmartUITests" */;
 			buildPhases = (
+				9B1B45BD4D02D2465EE3273D /* [CP] Check Pods Manifest.lock */,
 				30B6645C1FCD6E65003C8B55 /* Sources */,
 				30B6645D1FCD6E65003C8B55 /* Frameworks */,
 				30B6645E1FCD6E65003C8B55 /* Resources */,
@@ -260,9 +308,9 @@
 			dependencies = (
 				30B664621FCD6E65003C8B55 /* PBXTargetDependency */,
 			);
-			name = nRFBlinkyUITests;
+			name = GSmartUITests;
 			productName = nRFBlinkyUITests;
-			productReference = 30B664601FCD6E65003C8B55 /* nRFBlinkyUITests.xctest */;
+			productReference = 30B664601FCD6E65003C8B55 /* GSmartUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -294,7 +342,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 30B6643C1FCD6E65003C8B55 /* Build configuration list for PBXProject "nRFBlinky" */;
+			buildConfigurationList = 30B6643C1FCD6E65003C8B55 /* Build configuration list for PBXProject "GSmart" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -323,8 +371,8 @@
 			projectRoot = "";
 			targets = (
 				30B664401FCD6E65003C8B55 /* GSmart */,
-				30B664541FCD6E65003C8B55 /* nRFBlinkyTests */,
-				30B6645F1FCD6E65003C8B55 /* nRFBlinkyUITests */,
+				30B664541FCD6E65003C8B55 /* GSmartTests */,
+				30B6645F1FCD6E65003C8B55 /* GSmartUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -357,6 +405,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B76381B1F1FF94550EB1470 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GSmartTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B1B45BD4D02D2465EE3273D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GSmart-GSmartUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDBCFD282CD496AB4F13A6DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GSmart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30B6643D1FCD6E65003C8B55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,6 +484,7 @@
 				30B664881FCDA2E0003C8B55 /* BlinkyPeripheral.swift in Sources */,
 				30B664801FCD9638003C8B55 /* RootViewController.swift in Sources */,
 				30B664451FCD6E65003C8B55 /* AppDelegate.swift in Sources */,
+				7036B39624A1E867008B7493 /* CoreBluetoothTypeAliases.swift in Sources */,
 				52A637C5220DE11200F5308D /* String+Localization.swift in Sources */,
 				52FB0AF022131B7D00B1E575 /* UIColor+Nordic.swift in Sources */,
 				30B6648B1FD1590A003C8B55 /* BlinkyViewController.swift in Sources */,
@@ -377,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7036B39724A1E867008B7493 /* CoreBluetoothTypeAliases.swift in Sources */,
 				30B6645A1FCD6E65003C8B55 /* nRFBlinkyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7036B39824A1E867008B7493 /* CoreBluetoothTypeAliases.swift in Sources */,
 				30B664651FCD6E65003C8B55 /* nRFBlinkyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +698,7 @@
 		};
 		30B6646A1FCD6E65003C8B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89204C2671F90E882FCCB8AA /* Pods-GSmart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -598,6 +719,7 @@
 		};
 		30B6646B1FCD6E65003C8B55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5650109E050E1C96B90B1918 /* Pods-GSmart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -618,6 +740,7 @@
 		};
 		30B6646D1FCD6E65003C8B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF26D273C6BCC0321C92866E /* Pods-GSmartTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -630,12 +753,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nRFBlinky.app/nRFBlinky";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GSmart.app/GSmart";
 			};
 			name = Debug;
 		};
 		30B6646E1FCD6E65003C8B55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF092761F39299E0725623A0 /* Pods-GSmartTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -648,12 +772,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nRFBlinky.app/nRFBlinky";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GSmart.app/GSmart";
 			};
 			name = Release;
 		};
 		30B664701FCD6E65003C8B55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 399C373DF5A0887DE2041323 /* Pods-GSmart-GSmartUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
@@ -671,6 +796,7 @@
 		};
 		30B664711FCD6E65003C8B55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB828E244E4C1C746C193B5B /* Pods-GSmart-GSmartUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
@@ -689,7 +815,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		30B6643C1FCD6E65003C8B55 /* Build configuration list for PBXProject "nRFBlinky" */ = {
+		30B6643C1FCD6E65003C8B55 /* Build configuration list for PBXProject "GSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30B664671FCD6E65003C8B55 /* Debug */,
@@ -707,7 +833,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		30B6646C1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "nRFBlinkyTests" */ = {
+		30B6646C1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmartTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30B6646D1FCD6E65003C8B55 /* Debug */,
@@ -716,7 +842,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		30B6646F1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "nRFBlinkyUITests" */ = {
+		30B6646F1FCD6E65003C8B55 /* Build configuration list for PBXNativeTarget "GSmartUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30B664701FCD6E65003C8B55 /* Debug */,
